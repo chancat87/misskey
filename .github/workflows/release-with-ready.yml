@@ -26,7 +26,7 @@ jobs:
           echo "ref=$(echo $pr_json | jq -r '.headRefName')" >> $GITHUB_OUTPUT
         id: get_pr
   release:
-    uses: misskey-dev/release-manager-actions/.github/workflows/create-prerelease.yml@v1
+    uses: misskey-dev/release-manager-actions/.github/workflows/create-prerelease.yml@v2
     needs: check
     if: startsWith(needs.check.outputs.ref, 'release/')
     with:
